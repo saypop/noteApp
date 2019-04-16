@@ -1,7 +1,7 @@
 console.log("TESTING NOTE LIST MODEL")
 var noteList = new NoteList();
 var note = new Note();
-noteList.addNote(note);
+
 
 function canBeInstantiated() {
   assert.isTrue("can be instantiated", noteList !== undefined);
@@ -16,6 +16,7 @@ function storesArray() {
 storesArray();
 
 function addNote() {
+  noteList.addNote(note);
   assert.isTrue("adds a note to list", isEqual(noteList.list, [note]));
 };
 

@@ -22,7 +22,7 @@ function canReturnDiv() {
 };
 
 canReturnDiv();
-//
+
 // function addsANote() {
 //   function NoteListDouble () {
 //   };

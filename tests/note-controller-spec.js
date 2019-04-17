@@ -33,12 +33,9 @@ function setsAnHTML() {
   var noteList = new NoteList();
   var noteController = new NoteController(noteList);
   noteController.addNote("Favourite food: pesto");
-  function ElementDouble () {
-    this.innerHTML = '';
-  };
-  var elementDouble = new ElementDouble();
+  var elementDouble = {}
   noteController.setHTMLOfApp(elementDouble);
-  assert.isTrue(".setHTML change element innerHTML", elementDouble.innerHTML === "<ul><li><div>Favourite food: pesto</div></li></ul>");
+  assert.isTrue(".setHTML change element innerHTML", elementDouble.innerHTML === "<ul><li><div>Favourite food: pest</div></li></ul>");
 };
 
 setsAnHTML();

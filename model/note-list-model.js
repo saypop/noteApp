@@ -1,5 +1,5 @@
 (function (exports) {
-  function NoteList (text) {
+  function NoteList () {
     this.list = [];
   };
 

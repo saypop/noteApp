@@ -4,7 +4,7 @@
   }
 
   SingleNoteView.prototype.returnDiv = function () {
-    return '<ul><li><div><p>' + this.note.text + '</p></div></li></ul>';
+    return '<ul><div><p>' + this.note.text + '</p></div></ul>';
   };
 
   exports.SingleNoteView = SingleNoteView;

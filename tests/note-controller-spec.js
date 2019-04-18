@@ -35,7 +35,7 @@ function canRenderFrontPage() {
   noteController.addNote("Favourite food: pesto");
   var elementDouble = {}
   noteController.renderFrontPage(elementDouble);
-  assert.isTrue(".setHTML change element innerHTML", elementDouble.innerHTML === '<ul><li><div><a href="#notes/11">Favourite food: pest</a></div></li></ul>');
+  assert.isTrue(".setHTML change element innerHTML", elementDouble.innerHTML === '<ul><li><div><a href="#notes/12">Favourite food: pest</a></div></li></ul>');
 };
 
 canRenderFrontPage();
@@ -48,10 +48,9 @@ function canRenderNotePage() {
     this.innerHTML = '';
   };
   var elementDouble = new ElementDouble();
-  var locationDouble = 'localhost:8080/#notes/12';
+  var locationDouble = 'localhost:8080/#notes/13';
   noteController.renderNotePage(elementDouble, locationDouble);
-  // console.log(elementDouble.innerHTML);
-  assert.isTrue("changes content of app to become HTML of note", elementDouble.innerHTML === '<ul><li><div><p>Favourite food: pesto</p></div></li></ul>')
+  assert.isTrue("changes content of app to become HTML of note", elementDouble.innerHTML === '<ul><div><p>Favourite food: pesto</p></div></ul>')
 
 };
 

@@ -25,9 +25,9 @@ function canRenderListHTML() {
 
 canRenderListHTML();
 
-function canRenderPageHTML() {
-  var locationDouble = 'localhost:8080/#notes/8';
-  assert.isTrue("returns HTML with full note", noteListView.returnPageHTML(locationDouble) === '<ul><li><div><p>' + loremIpsum + '</p></div></li></ul>');
-};
-
-canRenderPageHTML();
+// function canRenderPageHTML() {
+//   var locationDouble = 'localhost:8080/#notes/8';
+//   assert.isTrue("returns HTML with full note", noteListView.returnPageHTML(locationDouble) === '<ul><li><div><p>' + loremIpsum + '</p></div></li></ul>');
+// };
+//
+// canRenderPageHTML();

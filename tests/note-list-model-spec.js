@@ -31,7 +31,7 @@ returnNotes();
 function newNote() {
   var newNote = new Note("This is a new note");
   noteList.newNote("This is a new note");
-  assert.isTrue("it adds a new note into the list", isEqual(noteList.list[1], newNote));
+  assert.isTrue("it adds a new note into the list", noteList.list[1].text === newNote.text);
 };
 
 newNote();

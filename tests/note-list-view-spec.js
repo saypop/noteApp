@@ -18,10 +18,16 @@ function isInstantiatedWithNoteList() {
 
 isInstantiatedWithNoteList();
 
-function canReturnHTML() {
+function canRenderListHTML() {
   noteList.newNote(loremIpsum);
-  
-  assert.isTrue("returns HTML string truncated to 20 chars", noteListView.returnHTML() === '<ul><li><div>Food</div></li><li><div>' + loremIpsumTrunc + '</div></li></ul>');
+  assert.isTrue("returns HTML with string truncated to 20 chars", noteListView.returnListHTML() === '<ul><li><div><a href="#notes/7">Food</a></div></li><li><div><a href="#notes/8">' + loremIpsumTrunc + '</a></div></li></ul>');
 };
 
-canReturnHTML();
+canRenderListHTML();
+
+function canRenderPageHTML() {
+  var locationDouble = 'localhost:8080/#notes/8';
+  assert.isTrue("returns HTML with full note", noteListView.returnPageHTML(locationDouble) === '<ul><li><div><p>' + loremIpsum + '</p></div></li></ul>');
+};
+
+canRenderPageHTML();

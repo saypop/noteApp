@@ -29,13 +29,30 @@ function addsANote() {
 
 addsANote();
 
-function setsAnHTML() {
+function canRenderFrontPage() {
   var noteList = new NoteList();
   var noteController = new NoteController(noteList);
   noteController.addNote("Favourite food: pesto");
   var elementDouble = {}
-  noteController.setHTMLOfApp(elementDouble);
-  assert.isTrue(".setHTML change element innerHTML", elementDouble.innerHTML === "<ul><li><div>Favourite food: pest</div></li></ul>");
+  noteController.renderFrontPage(elementDouble);
+  assert.isTrue(".setHTML change element innerHTML", elementDouble.innerHTML === '<ul><li><div><a href="#notes/11">Favourite food: pest</a></div></li></ul>');
 };
 
-setsAnHTML();
+canRenderFrontPage();
+
+function canRenderNotePage() {
+  var noteList = new NoteList();
+  var noteController = new NoteController(noteList);
+  noteController.addNote("Favourite food: pesto");
+  function ElementDouble () {
+    this.innerHTML = '';
+  };
+  var elementDouble = new ElementDouble();
+  var locationDouble = 'localhost:8080/#notes/12';
+  noteController.renderNotePage(elementDouble, locationDouble);
+  // console.log(elementDouble.innerHTML);
+  assert.isTrue("changes content of app to become HTML of note", elementDouble.innerHTML === '<ul><li><div><p>Favourite food: pesto</p></div></li></ul>')
+
+};
+
+canRenderNotePage();

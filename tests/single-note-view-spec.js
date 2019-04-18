@@ -18,7 +18,7 @@ takesNote();
 function canReturnDiv() {
   var chocolate = new Note("chocolate");
   var singleNoteView  = new SingleNoteView(chocolate);
-  assert.isTrue("returns HTML string", singleNoteView.returnDiv() === '<div>chocolate</div>');
+  assert.isTrue("returns HTML string", singleNoteView.returnDiv() === '<ul><li><div><p>chocolate</p></div></li></ul>');
 };
 
 canReturnDiv();
